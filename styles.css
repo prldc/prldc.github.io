@@ -122,18 +122,13 @@ section p {
 }
 
 .portrait {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  margin: 0;
-  overflow: hidden;
-  background: #ecece8;
-  border: 1px solid var(--line);
-}
-
-.portrait img {
   display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  margin: 0;
+  background: #ecece8;
+  border: 1px solid var(--line);
   object-fit: cover;
   object-position: 50% 42%;
 }
