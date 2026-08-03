@@ -300,8 +300,8 @@ footer {
   }
 
   .portrait {
-    grid-row: 1;
     width: min(15rem, 72vw);
+    margin-inline: auto;
   }
 
   .course-list li {
