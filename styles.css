@@ -283,6 +283,28 @@ footer {
   font-size: 0.9rem;
 }
 
+@media (min-width: 90rem) {
+  html {
+    font-size: 125%;
+  }
+
+  main {
+    width: min(60rem, calc(100% - 8rem));
+    margin-inline: auto;
+    padding-top: 4rem;
+  }
+
+  .section-introduction {
+    max-width: 48rem;
+  }
+
+  .teaching-group,
+  article h3,
+  .paper-abstract {
+    max-width: 50rem;
+  }
+}
+
 @media (max-width: 40rem) {
   html {
     font-size: 106.25%;
