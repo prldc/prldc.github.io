@@ -1,0 +1,283 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Curriculum Vitae -- Pedro I. R. Luz de Castro
+%
+% Derived from the RPI graduate CV template (LaTeXTemplates.com).
+% Uses the standard article class; res.cls is NOT required.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{XCharter}
+\usepackage{microtype}
+\usepackage{calc}
+\usepackage[shortlabels]{enumitem}
+\usepackage{array}
+\usepackage{fancyhdr,lastpage}
+\usepackage{needspace}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+
+\reversemarginpar
+
+\usepackage[paper=letterpaper,
+            marginparwidth=30.5mm,    % Length of section titles
+            marginparsep=1.5mm,       % Space between titles and text
+            margin=25mm,
+            includemp]{geometry}
+
+\setlength{\parindent}{0in}
+
+%----------------------------------------------------------------------------------------
+%	COLUMN WIDTHS FOR DATED TABLES
+%
+%	A two-column tabular with @{} on both outer edges still inserts one
+%	inter-column gap of 2\tabcolsep. Declaring the columns as
+%	p{\textwidth-1in} and p{1in} therefore overruns the text block by
+%	exactly 12pt, which is what produced the repeated
+%	"Overfull \hbox (12.0pt too wide)" warnings. Subtract the gap.
+%----------------------------------------------------------------------------------------
+
+\newlength{\datecol}
+\setlength{\datecol}{1in}
+\newlength{\entrycol}
+\setlength{\entrycol}{\textwidth}
+\addtolength{\entrycol}{-\datecol}
+\addtolength{\entrycol}{-2\tabcolsep}
+
+\newenvironment{dated}%
+    {\begin{tabular}{@{}>{\raggedright\arraybackslash}p{\entrycol}%
+                       >{\raggedleft\arraybackslash}p{\datecol}@{}}}%
+    {\end{tabular}}
+
+%----------------------------------------------------------------------------------------
+%	HEADER, FOOTER, LINKS
+%----------------------------------------------------------------------------------------
+
+\pagestyle{fancy}
+\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfootoffset{\marginparsep+\marginparwidth}
+\newlength{\footpageshift}
+\setlength{\footpageshift}
+          {0.5\textwidth+0.5\marginparsep+0.5\marginparwidth-2in}
+\lfoot{\hspace{\footpageshift}%
+       \parbox{4in}{\, \hfill
+                    \small Luz de Castro \textperiodcentered\ Page
+                    \thepage\ of \pageref*{LastPage}%
+                    \hfill \,}}
+
+\definecolor{linknavy}{HTML}{000000}
+\hypersetup{colorlinks,breaklinks,
+            linkcolor=linknavy,urlcolor=linknavy,
+            anchorcolor=linknavy,citecolor=linknavy,
+            pdftitle={Pedro I. R. Luz de Castro -- Curriculum Vitae},
+            pdfauthor={Pedro I. R. Luz de Castro},
+            pdfsubject={Curriculum Vitae}}
+
+\newcommand{\makeheading}[1]%
+        {\hspace*{-\marginparsep minus \marginparwidth}%
+         \begin{minipage}[t]{\textwidth+\marginparwidth+\marginparsep}%
+             {\LARGE\bfseries #1 \hfill \small Updated: \today}\\[-0.15\baselineskip]%
+                 \rule{\columnwidth}{0.4pt}%
+         \end{minipage}}
+
+% Section headings, set small-caps in the left margin.
+%
+% The heading sits in \smash, so it has zero height and the page builder
+% cannot see it. Without \Needspace a heading can be left stranded at the
+% foot of a page with its content on the next one -- and, worse, a
+% three-line margin heading can overprint the footer. Reserve room for the
+% heading plus the first few entries.
+\renewcommand{\section}[1]{\par\pagebreak[3]%
+    \Needspace*{5\baselineskip}%
+    \vspace{1.3\baselineskip}%
+    \phantomsection\addcontentsline{toc}{section}{#1}%
+    \noindent\llap{\scshape\smash{\parbox[t]{\marginparwidth}{\raggedright #1}}}%
+    \vspace{-\baselineskip}\par}
+
+% Kept for future publication lists.
+\newenvironment{outerlist}[1][\enskip\textbullet]%
+        {\begin{itemize}[#1,leftmargin=*]}{\end{itemize}%
+         \vspace{-.6\baselineskip}}
+\newenvironment{innerlist}[1][\enskip\textbullet]%
+        {\begin{itemize}[#1,leftmargin=*,parsep=0pt,itemsep=0pt,topsep=0pt,partopsep=0pt]}
+        {\end{itemize}}
+
+\providecommand*\url[1]{\href{#1}{#1}}
+\providecommand*\email[1]{\href{mailto:#1}{#1}}
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	NAME
+%----------------------------------------------------------------------------------------
+
+\makeheading{Pedro I. R. Luz de Castro}
+
+%----------------------------------------------------------------------------------------
+%	CONTACT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\section{Contact Information}
+
+\newlength{\rcollength}\setlength{\rcollength}{2.8in}%
+%
+\begin{tabular}[t]{@{}p{\textwidth-\rcollength-2\tabcolsep}p{\rcollength}@{}}
+Department of Political Science & \textit{Phone:} 734-492-2304 \\
+6756 Haven Hall & \textit{Email:} \email{pldc@umich.edu}\\
+505 South State Street & \faGlobe\ \href{https://pedroluzdecastro.com}{pedroluzdecastro.com}\\
+Ann Arbor, MI 48104 & \\
+\end{tabular}
+
+%----------------------------------------------------------------------------------------
+%	RESEARCH INTERESTS
+%----------------------------------------------------------------------------------------
+
+\section{Research Interests}
+
+Political economy of development; state formation and state capacity; political geography; territorial and criminal governance.
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+
+\section{Education}
+
+\begin{dated}
+\href{http://www.umich.edu}{\textbf{University of Michigan}}, Ann Arbor, MI & \\
+Ph.D., \href{https://lsa.umich.edu/polisci/}{Political Science} & Expected 2028 \\
+M.A., \href{https://lsa.umich.edu/econ/mae.html}{Applied Economics} & 2025 \\[5pt]
+\href{http://unb.br}{\textbf{University of Bras\'ilia}}, Bras\'ilia, Brazil & \\
+LL.M., \href{https://ppgd.unb.br}{Law} & 2022\\
+LL.B., \href{https://www.direito.unb.br}{Law} & 2018\\
+\end{dated}
+
+%----------------------------------------------------------------------------------------
+%	WORKING PAPERS
+%----------------------------------------------------------------------------------------
+
+\section{Working\texorpdfstring{\\}{ }Papers}
+
+``Fiscal Extraction under Partial Sovereignty: Evidence from Criminal Territories in Rio de Janeiro''\par
+Examines when territorial control translates into fiscal extraction and how
+transaction mobility constrains that power. Uses staggered territorial
+takeovers and spatial price data from Rio de Janeiro.
+
+%----------------------------------------------------------------------------------------
+%	WORKS IN PROGRESS
+%----------------------------------------------------------------------------------------
+
+\section{Works in Progress}
+
+\medskip
+``Municipal Taxation and Firm Organization''\par
+``Armed-Actor Rule and Governance Observations''
+% When the PDF is online, wrap the title:
+% \href{https://pedroluzdecastro.com/fiscal-extraction.pdf}{``Fiscal Extraction ...''}
+
+%----------------------------------------------------------------------------------------
+%	SELECTED RESEARCH PRESENTATIONS
+%----------------------------------------------------------------------------------------
+
+\section{Selected Research Presentations}
+
+\begin{dated}
+Political Economy and the Environment Group, University of Michigan & April 2026\\
+Interdisciplinary Workshop on Comparative Politics, University of Michigan & 2025
+\end{dated}
+
+%----------------------------------------------------------------------------------------
+%	TEACHING EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\section{Teaching Experience}
+
+\begin{dated}
+\multicolumn{2}{@{}l}{\textit{Graduate Student Instructor, University of Michigan}}\\
+International Economic Relations & Fall 2024\\
+Introduction to Comparative Politics & Winter 2024\\
+Data Science for International Studies & Fall 2023\\
+Introduction to World Politics & Winter 2023\\
+Quantitative Empirical Methods of Political Science & Fall 2022\\[5pt]
+\multicolumn{2}{@{}l}{\textit{Instructional Aide, ICPSR Summer Program}}\\
+Introduction to Python & Summer 2023\\
+Introduction to the R Statistical Computing Environment & Summer 2023\\[5pt]
+Programming for Legal Research Workshop, University of Bras\'ilia & 2020
+\end{dated}
+
+%----------------------------------------------------------------------------------------
+%	RESEARCH EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\Needspace*{12\baselineskip}
+\section{Research Experience}
+
+\begin{dated}
+Graduate Student Research Assistant & 2024--Present\\
+\textit{Supervisor: George Tsebelis} & \\[5pt]
+Graduate Student Research Assistant & Summer 2023\\
+\textit{Supervisor: Robert J. Franzese, Jr.} & \\[5pt]
+Graduate Student Research Assistant & Summer 2022\\
+\textit{Supervisor: Deborah Beim} & \\
+\end{dated}
+
+%----------------------------------------------------------------------------------------
+%	FELLOWSHIPS, AWARDS AND HONORS
+%----------------------------------------------------------------------------------------
+
+\section{Fellowships, Awards and Honors}
+
+\begin{dated}
+Oskar Morgenstern Fellowship, Mercatus Center & 2023--2024\\
+ISR--Rackham Summer Training Award & 2023\\
+Graduate Research Fellowship, University of Bras\'ilia & 2019--2021\\
+Undergraduate Research Fellowship, University of Bras\'ilia & 2015--2016
+\end{dated}
+
+%----------------------------------------------------------------------------------------
+%	SERVICE
+%----------------------------------------------------------------------------------------
+
+\section{Service}
+
+\begin{dated}
+Graduate Student Coordinator, \href{https://sites.google.com/umich.edu/pew/}{Political Economy Workshop} & 2024--Present\\
+Graduate Student Coordinator, \href{https://sites.lsa.umich.edu/iwcp-umich/}{Interdisciplinary Workshop on Comparative Politics} & 2024--2025\\
+Graduate Admissions Committee, Department of Political Science & 2023--2024\\
+Editor, University of Bras\'ilia Student Law Review & 2017
+\end{dated}
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+
+\section{Skills}
+
+\emph{Technical}: Python, R, git, Stata, \LaTeX \\
+\emph{Language}: Portuguese (native), English (fluent), Spanish (intermediate)
+
+%----------------------------------------------------------------------------------------
+%	REFERENCES
+%----------------------------------------------------------------------------------------
+
+\section{References}
+
+\newlength{\refcol}
+\setlength{\refcol}{0.5\entrycol}
+\addtolength{\refcol}{-\tabcolsep}
+
+\begin{tabular}{@{}p{\refcol}p{\refcol}@{}}
+\textbf{Mark Dincecco} & \textbf{George Tsebelis} \\
+Professor & Professor \\
+Political Science & Political Science \\
+University of Michigan & University of Michigan \\
+\email{dincecco@umich.edu} & \email{tsebelis@umich.edu} \\[10pt]
+\textbf{Edgar Franco-Vivanco} & \textbf{Cesi Cruz} \\
+Assistant Professor & Associate Professor \\
+Political Science & Political Science \\
+University of Michigan & University of Michigan \\
+\email{efrancov@umich.edu} & \email{cesi@umich.edu} \\
+\end{tabular}
+
+\end{document}
